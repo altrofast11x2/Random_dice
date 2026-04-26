@@ -1,0 +1,43 @@
+.die {
+  width: 80px;
+  height: 80px;
+  border: 1.5px solid #333;
+  border-radius: 16px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.die.rolling {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%   { transform: rotate(0deg) scale(1); }
+  15%  { transform: rotate(-10deg) scale(1.1); }
+  30%  { transform: rotate(8deg) scale(0.92); }
+  50%  { transform: rotate(-6deg) scale(1.07); }
+  70%  { transform: rotate(4deg) scale(0.96); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.dot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 14px);
+  grid-template-rows: repeat(3, 14px);
+  gap: 4px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #111;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.dot.on {
+  opacity: 1;
+}
